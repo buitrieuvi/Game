@@ -2,6 +2,7 @@
 using Game.Service;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game.View
 {
@@ -11,10 +12,14 @@ namespace Game.View
     {
         [SerializeField] private TextMeshProUGUI _textName;
         [SerializeField] private RectTransform _main;
+        [SerializeField] private Button _btnGet;
+        public Button BtnGet  => _btnGet;
+
         CanvasGroup _canvasGroup;
 
         private Sequence seqTextName;
         private Sequence seqMain;
+
 
         public override void Awake()
         {

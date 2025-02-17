@@ -252,7 +252,9 @@ namespace Game.Presenter
             if (c != null)
             {
                 c.TriggerEnter();
+                playerState.player.transform.parent = c.transform;
             }
+
         }
 
         public virtual void OntriggerExit(Collider coll)
@@ -261,6 +263,7 @@ namespace Game.Presenter
             if (c != null)
             {
                 c.TriggerExit();
+                playerState.player.transform.parent = null;
             }
         }
     }

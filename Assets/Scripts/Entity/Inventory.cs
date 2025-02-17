@@ -12,18 +12,6 @@ namespace Game.Model
             public string Id;
             public int Quantity;
 
-            public void Init() 
-            {
-                Id = "";
-                Quantity = 0;
-            }
-
-            public void Init(string id, int quantity)
-            {
-                Id = id;
-                Quantity = quantity;
-            }
-
             public Slot() 
             {
                 Id = "";

@@ -9,19 +9,5 @@ namespace Game.Presenter
     public class GachaPresenter : MonoBehaviour 
     {
         public Gacha Gacha = new Gacha();
-
-        public void Awake()
-        {
-            Gacha.GetItemSO();
-            Gacha.GetItemSO();
-            Gacha.GetItemSO();
-            Gacha.GetItemSO();
-            Gacha.GetItemSO();
-        }
-
-        public void Start()
-        {
-            Gacha.ToJson();
-        }
     }
 }
