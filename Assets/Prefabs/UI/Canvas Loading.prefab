@@ -154,8 +154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc19241f623e4e46a2b892ae90a28bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsShow: 0
   _imgLoading: {fileID: 990083810688090560}
-  _timeLoading: 0.35
-  _timeLoadingFadeIn: 0.35
-  _timeLoadingFadeOut: 0.35
+  TimeLoading: 0.15
+  TimeLoadingFadeIn: 0.15
+  TimeLoadingFadeOut: 0.15
   IsLoading: 0

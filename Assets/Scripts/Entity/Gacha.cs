@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Game.Model
@@ -50,22 +51,35 @@ namespace Game.Model
             float rd = GetFloat();
             float index = 0f;
 
-            foreach (Node n in Nodes.NextNode)
+            if (Nodes.Nodes.Any()) 
             {
-                index += n.Prob;
-                if (rd <= index)
+                foreach (ItemNode m in Nodes.Nodes)
                 {
-                    Debug.Log($"{rd}");
-
-                    rd = GetFloat();
-                    index = 0f;
-
-                    foreach (ItemNode m in n.Nodes)
+                    index += m.Prob;
+                    if (rd <= index)
                     {
-                        index += m.Prob;
-                        if (rd <= index)
+                        return m.Item;
+                    }
+                }
+            }
+
+            if(Nodes.NextNode.Any())
+            {
+                foreach (Node n in Nodes.NextNode)
+                {
+                    index += n.Prob;
+                    if (rd <= index)
+                    {
+                        rd = GetFloat();
+                        index = 0f;
+
+                        foreach (ItemNode m in n.Nodes)
                         {
-                            return m.Item;
+                            index += m.Prob;
+                            if (rd <= index)
+                            {
+                                return m.Item;
+                            }
                         }
                     }
                 }

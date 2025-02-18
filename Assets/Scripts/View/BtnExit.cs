@@ -1,11 +1,14 @@
 ﻿using Game.Presenter;
 using Game.View;
+using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using Zenject;
 
 namespace Game
 {
-    public class BtnExit : ButtonBase, IPointerClickHandler
+    public class BtnExit : ButtonBase,
+        IPointerClickHandler
     {
         [Inject] private UIManager _ui;
 

@@ -8,9 +8,9 @@ namespace Game.View
     {
         [SerializeField] protected Image _imgLoading;
 
-        public float TimeLoading = 0.25f; 
-        public float TimeLoadingFadeIn = 0.25f;
-        public float TimeLoadingFadeOut = 0.25f;
+        public float TimeLoading = 0.15f; 
+        public float TimeLoadingFadeIn = 0.15f;
+        public float TimeLoadingFadeOut = 0.15f;
         public bool IsLoading;
 
         private Sequence _seqLoading;

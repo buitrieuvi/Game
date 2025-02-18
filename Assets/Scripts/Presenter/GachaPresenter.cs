@@ -8,6 +8,11 @@ namespace Game.Presenter
     [Serializable]
     public class GachaPresenter : MonoBehaviour 
     {
-        public Gacha Gacha = new Gacha();
+        [SerializeField] private Gacha _gacha = new Gacha();
+
+        public ItemSO GachaItem()
+        {
+            return _gacha.GetItemSO();
+        }
     }
 }

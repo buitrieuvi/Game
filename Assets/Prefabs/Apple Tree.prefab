@@ -409,28 +409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c964f01a93ab74899b77114c7bafd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Gacha:
-    Id: 
-    Name: 
-    Nodes:
-      Prob: 100
-      NextNode:
-      - Prob: 0.2
-        NextNode: []
-        Nodes:
-        - Item: {fileID: 11400000, guid: 524cdca1bb65ee94aaf2c3e2e28c5e5a, type: 2}
-          Prob: 100
-      - Prob: 9.8
-        NextNode: []
-        Nodes:
-        - Item: {fileID: 11400000, guid: b081e8d752e3a2045b1aea1876ce5ce1, type: 2}
-          Prob: 100
-      - Prob: 90
-        NextNode: []
-        Nodes:
-        - Item: {fileID: 11400000, guid: 9ea9f58ad78f79c4f8a8e6feb21ec7b6, type: 2}
-          Prob: 100
-      Nodes: []
 --- !u!1 &4130956056877985695
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,7 +456,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4130956056877985695}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -844,7 +822,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -30, y: 30}
-  m_SizeDelta: {x: 320, y: 90}
+  m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &7055387077664098416
 CanvasRenderer:

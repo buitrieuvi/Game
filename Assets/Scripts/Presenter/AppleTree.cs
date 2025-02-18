@@ -21,6 +21,7 @@ namespace Game.Presenter
             _gacha = GetComponent<GachaPresenter>();
 
             _view.BtnGet.onClick.AddListener(GetApple);
+
         }
 
         public override void Input(InputAction.CallbackContext context)
@@ -55,8 +56,9 @@ namespace Game.Presenter
             InventoryBase inventory = GetComponentInChildren<InventoryBase>();
             if (inventory == null) return;
 
-            ItemSO item = _gacha.Gacha.GetItemSO();
+            ItemSO item = _gacha.GachaItem();
             inventory.UpdateInventory(new Model.Inventory.Slot(item.Item.Id, 1));
+            
 
             inventory.UpdateInventoryUI();
         }
