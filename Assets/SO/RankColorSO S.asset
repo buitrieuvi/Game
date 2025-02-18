@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce70b25f189ded143948f57042aeb750, type: 3}
-  m_Name: AppleS
+  m_Script: {fileID: 11500000, guid: ace43f6212ea5304f830b1609b56a85f, type: 3}
+  m_Name: RankColorSO S
   m_EditorClassIdentifier: 
-  Item:
-    Id: apS
-    Name: Apple S
-    RankItem: 1
-    Icon: {fileID: -97506143, guid: 7fa71c27938abab49828d2f4eab8bbce, type: 3}
+  RankColor:
+    Rank: 1
+    Color: {r: 1, g: 0.5055522, b: 0.16509432, a: 1}

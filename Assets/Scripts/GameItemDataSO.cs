@@ -18,10 +18,16 @@ public class GameItemDataSO : ScriptableObjectInstaller<GameItemDataSO>
     public class GameItemDatas
     {
         public List<ItemSO> ItemSO;
+        public List<RankColorSO> RankColorSO;
 
         public ItemSO GetItemSO(string id)
         {
             return ItemSO.FirstOrDefault(x => x.Item.Id == id);
+        }
+
+        public Color GetRankColor(Item.Rank id)
+        {
+            return RankColorSO.FirstOrDefault(x => x.RankColor.Rank == id).RankColor.Color;
         }
     }
 }

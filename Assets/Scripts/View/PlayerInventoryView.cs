@@ -3,6 +3,7 @@ using Game.Model;
 using Game.Service;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 namespace Game.View
@@ -18,15 +19,22 @@ namespace Game.View
 
         [Inject] private GameItemDataSO.GameItemDatas _itemData;
 
+        [SerializeField] private GameObject _slot;
+
         private Sequence seqInventory;
+
+        [SerializeField] private Color _rankColorNone;
 
         public override void Awake()
         {
+
             base.Awake();
             foreach (Transform slot in _content.transform) 
             {
                 _listSlot.Add(slot.GetComponent<InventorySlotView>());
             }
+
+            _rankColorNone = _slot.GetComponentInChildren<Image>().color;
         }
 
         public override void Show()
@@ -47,8 +55,12 @@ namespace Game.View
 
             for (int i = 0; i < count; i++)
             {
+                var slot = _itemData.GetItemSO(inventory.Items[i].Id);
                 _listSlot[i].Init(inventory.Items[i]);
-                _listSlot[i].Icon.sprite = _itemData.GetItemSO(inventory.Items[i].Id).Item.Icon;
+
+                _listSlot[i].Icon.sprite = slot.Item.Icon;
+                _listSlot[i].Rank.color = _itemData.GetRankColor(slot.Item.RankItem);
+
                 index++;
             }
 
@@ -58,6 +70,7 @@ namespace Game.View
                 {
                     _listSlot[index].Init(null);
                     _listSlot[index].Icon.sprite = null;
+                    _listSlot[index].Rank.color = _rankColorNone;
                     index++;
                 }
                 else

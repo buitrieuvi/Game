@@ -17,8 +17,10 @@ namespace Game.View
         [SerializeField] private TextMeshProUGUI _text;
         [SerializeField] private Image _icon;
         [SerializeField] private CanvasGroup _cvg;
+        [SerializeField] private Image _rank;
 
         public Image Icon => _icon;
+        public Image Rank => _rank;
 
         private Sequence _seqHover;
 

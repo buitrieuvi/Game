@@ -17,3 +17,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 524cdca1bb65ee94aaf2c3e2e28c5e5a, type: 2}
     - {fileID: 11400000, guid: b081e8d752e3a2045b1aea1876ce5ce1, type: 2}
     - {fileID: 11400000, guid: 9ea9f58ad78f79c4f8a8e6feb21ec7b6, type: 2}
+    RankColorSO:
+    - {fileID: 11400000, guid: 43eea8b11171fbf478f98e10e4cab326, type: 2}
+    - {fileID: 11400000, guid: 8e6a565e21cd7b64c9272cfc04a810fe, type: 2}
+    - {fileID: 11400000, guid: 7ec77294d1419e2429498407a1a1343f, type: 2}
