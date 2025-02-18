@@ -1,5 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Game.Model;
 using Game.Service;
 using Game.View;
 using UnityEngine;
@@ -59,7 +60,6 @@ namespace Game.Presenter
             ItemSO item = _gacha.GachaItem();
             inventory.UpdateInventory(new Model.Inventory.Slot(item.Item.Id, 1));
             
-
             inventory.UpdateInventoryUI();
         }
     }

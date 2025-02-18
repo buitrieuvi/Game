@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Game.Model
 {
@@ -21,5 +22,6 @@ namespace Game.Model
         public string Id;
         public string Name;
         public Rank RankItem;
+        public Sprite Icon;
     }
 }

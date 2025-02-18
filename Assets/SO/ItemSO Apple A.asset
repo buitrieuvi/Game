@@ -16,3 +16,4 @@ MonoBehaviour:
     Id: 1
     Name: A
     RankItem: 2
+    Icon: {fileID: -97506143, guid: 7fa71c27938abab49828d2f4eab8bbce, type: 3}

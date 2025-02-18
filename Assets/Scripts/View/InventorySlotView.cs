@@ -15,6 +15,10 @@ namespace Game.View
     {
         [SerializeField] private Button _btn;
         [SerializeField] private TextMeshProUGUI _text;
+        [SerializeField] private Image _icon;
+        [SerializeField] private CanvasGroup _cvg;
+
+        public Image Icon => _icon;
 
         private Sequence _seqHover;
 
@@ -27,12 +31,15 @@ namespace Game.View
             if (Slot != null)
             {
                 _text.text = Slot.Quantity.ToString();
+
                 _btn.interactable = true;
+                _cvg.alpha = 1f;
                 return;
             }
 
             _text.text = "";
             _btn.interactable = false;
+            _cvg.alpha = 0f;
 
         }
 

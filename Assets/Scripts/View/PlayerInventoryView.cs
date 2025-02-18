@@ -3,6 +3,7 @@ using Game.Model;
 using Game.Service;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 namespace Game.View
 {
@@ -13,6 +14,9 @@ namespace Game.View
         [SerializeField] private RectTransform _content;
 
         [SerializeField] private float _nextTimeInsert;
+
+
+        [Inject] private GameItemDataSO.GameItemDatas _itemData;
 
         private Sequence seqInventory;
 
@@ -44,6 +48,7 @@ namespace Game.View
             for (int i = 0; i < count; i++)
             {
                 _listSlot[i].Init(inventory.Items[i]);
+                _listSlot[i].Icon.sprite = _itemData.GetItemSO(inventory.Items[i].Id).Item.Icon;
                 index++;
             }
 
@@ -52,6 +57,7 @@ namespace Game.View
                 if (_listSlot[index].Slot.Id != "")
                 {
                     _listSlot[index].Init(null);
+                    _listSlot[index].Icon.sprite = null;
                     index++;
                 }
                 else
