@@ -3,6 +3,8 @@ using UnityEngine;
 
 namespace Game.Model
 {
+
+
     public class AppleTree 
     {
 
