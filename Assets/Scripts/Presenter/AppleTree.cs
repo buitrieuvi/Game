@@ -43,13 +43,11 @@ namespace Game.Presenter
         public override void TriggerEnter()
         {
             base.TriggerEnter();
-            _view.TriggerEnter();
         }
 
         public override void TriggerExit()
         {
             base.TriggerExit();
-            _view.TriggerExit();
         }
 
         public void GetApple()

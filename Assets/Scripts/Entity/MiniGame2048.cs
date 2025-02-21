@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace Game.Model
 {
-    public class MiniGame2048
+    public class Minigame2048
     {
         public int SizeMap { get; set; }
         public int[,] Map { get; set; }
 
-        public MiniGame2048(int size)
+        public Minigame2048(int size)
         {
             SizeMap = size;
             Map = new int[size, size];

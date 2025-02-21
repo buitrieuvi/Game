@@ -44,16 +44,13 @@ namespace Game.Presenter
         public virtual void TriggerEnter()
         {
             ui.Ctrl = this;
+            view.TriggerEnter();
         }
 
         public virtual void TriggerExit()
         {
             ui.Ctrl = null;
-        }
-
-        public virtual void ReUpdate() 
-        {
-
+            view.TriggerExit();
         }
 
         public virtual async void Input(InputAction.CallbackContext context) 

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 namespace Game.View
 {
+
     public class AppleTreeView : View,
         IShowHide,
         ITrigger
@@ -43,33 +44,19 @@ namespace Game.View
         }
 
 
-        public virtual void TriggerEnter()
+        public override void TriggerEnter()
         {
-            AnimateTextName(ref seqTextName);
+            AnimateTextName(ref seqTextName, _textName);
         }
 
-        public virtual void TriggerExit()
+        public override void TriggerExit()
         {
             seqTextName.Pause();
             _textName.DOFade(0f, 1.5f);
         }
 
-        public void AnimateTextName(ref Sequence sequence) 
-        {
 
-            if (sequence == null)
-            {
-                sequence = DOTween.Sequence();
-                sequence.SetAutoKill(false);
-                sequence.SetLoops(-1, LoopType.Yoyo);
 
-                sequence.Append(_textName.DOFade(0.9f, 1.5f));
-            }
-            else 
-            {
-                sequence.Restart();
-            }
-        }
         public void AnimateMain(ref Sequence sequence)
         {
             if (sequence == null)

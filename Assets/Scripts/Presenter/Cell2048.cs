@@ -6,7 +6,7 @@ namespace Game.Presenter
     public class Cell2048 : MonoBehaviour
     {
         public TextMeshProUGUI Text;
-        public Canvas Canv;
+        public CanvasGroup Canv;
 
     }
 }
