@@ -42,12 +42,12 @@ namespace Game.Presenter
                     if (value == 0)
                     {
                         cells[i * size + j].Text.text = "0";
-                        cells[i * size + j].Canv.alpha = 0f;
+                        cells[i * size + j].AnimateGenHide();
                     }
                     else
                     {
                         cells[i * size + j].Text.text = value.ToString();
-                        cells[i * size + j].Canv.alpha = 1f;
+                        cells[i * size + j].AnimateGenShow();
                     }
                 }
             }
@@ -64,9 +64,18 @@ namespace Game.Presenter
                 cells.Add(c.GetComponent<Cell2048>());
             }
 
+            model.Gen22();
+            model.Gen22();
+
             ReUpdate();
 
             input.Ui.Move.started += Move;
+        }
+
+        public void Gen22() 
+        {
+            model.Gen22();
+            cells[model.GenIndex].AnimateGenShow();
         }
 
         public override void Hide()

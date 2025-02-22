@@ -9,6 +9,8 @@ namespace Game.Model
     {
         public int SizeMap { get; set; }
         public int[,] Map { get; set; }
+        public int GenIndex { get; set; }
+
 
         public Minigame2048(int size)
         {
@@ -22,9 +24,6 @@ namespace Game.Model
                     Map[i, j] = 0;
                 }
             }
-
-            Gen22();
-            Gen22();
         }
 
         // Sinh số mới vào ô trống ngẫu nhiên
@@ -47,6 +46,7 @@ namespace Game.Model
             {
                 Vector2Int cell = emptyCells[Random.Range(0, emptyCells.Count)];
                 Map[cell.x, cell.y] = (Random.Range(0, 10) < 9) ? 2 : 4; // 90% là 2, 10% là 4
+                GenIndex = cell.x * SizeMap + cell.y;
             }
         }
 
