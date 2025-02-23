@@ -1,4 +1,5 @@
-﻿using Game.Service;
+﻿using Cysharp.Threading.Tasks;
+using Game.Service;
 using Game.View;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,7 @@ namespace Game.Presenter
         private Model.Minigame2048 model;
 
         public Transform Grid;
-        private List<Cell2048> cells = new List<Cell2048>();
+        private List<Cell2048View> cells = new List<Cell2048View>();
 
         [SerializeField] private Vector2 dir;
 
@@ -30,6 +31,23 @@ namespace Game.Presenter
         public void Awake()
         {
             view = _view;
+
+            _view.BtnReStart.onClick.AddListener(ReStart);
+
+            foreach (Transform c in Grid)
+            {
+                cells.Add(c.GetComponent<Cell2048View>());
+            }
+
+            ReStart();
+        }
+
+        public void ReStart() 
+        {
+            model = new Model.Minigame2048(size);
+            Gen22();
+            Gen22();
+            ReUpdate();
         }
 
         public void ReUpdate() 
@@ -41,13 +59,21 @@ namespace Game.Presenter
                     int value = model.Map[i, j];
                     if (value == 0)
                     {
+                        if (cells[i * size + j].Text.text != "0") 
+                        {
+                            cells[i * size + j].AnimateGenHide();
+                        }
                         cells[i * size + j].Text.text = "0";
-                        cells[i * size + j].AnimateGenHide();
+
                     }
                     else
                     {
+
+                        if (cells[i * size + j].Text.text != value.ToString())
+                        {
+                            cells[i * size + j].AnimateGenShow();
+                        }
                         cells[i * size + j].Text.text = value.ToString();
-                        cells[i * size + j].AnimateGenShow();
                     }
                 }
             }
@@ -55,20 +81,9 @@ namespace Game.Presenter
 
         public override void Show()
         {
-            base.Show();
-
-            model = new Model.Minigame2048(size);
-
-            foreach (Transform c in Grid)
-            {
-                cells.Add(c.GetComponent<Cell2048>());
-            }
-
-            model.Gen22();
-            model.Gen22();
-
             ReUpdate();
 
+            base.Show();
             input.Ui.Move.started += Move;
         }
 

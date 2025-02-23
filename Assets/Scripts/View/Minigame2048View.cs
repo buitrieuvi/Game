@@ -2,6 +2,7 @@ using DG.Tweening;
 using Game.Service;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game.View
 {
@@ -10,6 +11,7 @@ namespace Game.View
         ITrigger
     {
         [SerializeField] private TextMeshProUGUI _textName;
+        public Button BtnReStart;
 
         private Sequence seqTextName;
 
